@@ -1,15 +1,11 @@
 let timeCount = 0;
-let roast = ["You lose a bot? CRINGE.","Obviously you need some training. NOOB","YOU LOSE TO A BOTTTTT","LMAO","This bot can't even think. HOW!?","It's just a random bot. HOW DID YOU LOSE"];
+let roast = ["You lose a bot? CRINGE.","Obviously you need some training. NOOB","YOU LOSE TO A BOTTTTT","LMAO","This bot can't even think. HOW!?","It's just a random bot. HOW DID YOU LOSE","PFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF","F"];
 
 function onClick(x,y){
-    console.log('Clicked');
     let imgSrc = document.getElementById('tic').rows[x].cells[y].innerHTML;
     let gameOver = false;
-    console.log(imgSrc);
     if(imgSrc === '<img src="https://www.panelplus.co.th/uploads/collection/5be55-white-mk630n.jpg" alt="" class="img-thumbnail">'){
         document.getElementById('tic').rows[x].cells[y].innerHTML = '<img src="https://image.flaticon.com/icons/png/512/75/75519.png" alt="" class="img-thumbnail">';
-        console.log(timeCount);
-        console.log(check());
         timeCount = 0;
         if(timeCount === 0 && check() === false && checkForDraw() === true){
             
@@ -36,7 +32,7 @@ function onClick(x,y){
                     if(check()===true){
                         console.log('bot Win!');
                         Endgame();
-                        document.getElementById('results').innerHTML = 'Bot Win! ' + roast[Math.floor(Math.random() * (roast.length-1))];
+                        document.getElementById('results').innerHTML = 'Bot Win! ' + roast[Math.floor(Math.random() * (roast.length))];
                     }
                 break;
                 }
@@ -59,7 +55,6 @@ function Endgame(){
         }
     }
     let button = document.getElementById("reset");
-    console.log(button);
     button.style.display = 'inline';
     button.addEventListener('click',function() {reset()},true);
     
@@ -73,7 +68,6 @@ function reset(){
         }
     }
     let button = document.getElementById("reset");
-    console.log('resetting');
     button.style.display = 'none';
     document.getElementById('results').innerHTML = '';
     document.body.removeEventListener('click',function() {reset()},false);
@@ -289,7 +283,6 @@ let row = document.querySelectorAll('tr');
 
 for(let i=0;i<row.length;i++){
     let button = document.getElementById("reset");
-    console.log('resetting');
     button.style.display = 'none';
     let col = document.querySelectorAll('#' +row[i].id+' td');
     for(let j=0;j<col.length;j++){
